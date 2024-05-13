@@ -69,7 +69,7 @@ int is_valid(Node* n){
          if(columnas[j][numero] == 1) return 0;
          columnas[j][numero] = 1;
 
-         int fila_inicio = (i / 3) * 3 + (j / 3);
+         int fila_inicio = (i / 3) * 3 + (j / 3) * 3;
          if(submatriz[fila_inicio][numero] == 1) return 0;
          submatriz[fila_inicio][numero] = 1;
       }

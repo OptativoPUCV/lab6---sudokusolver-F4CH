@@ -14,3 +14,19 @@ Mon 13 May 2024 10:21:04 PM UTC:
  tests:  2|4
 total_score: 15/70
 4da4b47
+Mon 13 May 2024 10:26:40 PM UTC: 
+ sudoku.c | 18 ++++++++++++++++++
+ 1 file changed, 18 insertions(+)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:47:23: error: expected expression before ‘[’ token
+   47 |    int filas[9][10] = [0];
+      |                       ^
+sudoku.c:48:26: error: expected expression before ‘[’ token
+   48 |    int columnas[9][10] = [0];
+      |                          ^
+sudoku.c:49:27: error: expected expression before ‘[’ token
+   49 |    int submatriz[9][10] = [0];
+      |                           ^
+Compilation failed
+36d076c

@@ -54,3 +54,20 @@ Mon 13 May 2024 10:38:46 PM UTC:
  tests:  2|4
 total_score: 15/70
 1c4ca23
+Sat 18 May 2024 12:06:51 AM UTC: 
+ sudoku.c | 37 ++++++++++++-------------------------
+ 1 file changed, 12 insertions(+), 25 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:57:81: error: subscripted value is neither array nor pointer nor vector
+   57 |              if(filas[i][num - 1] == 1 || columnas[j][num - 1] == 1 || submatriz[submatriz][num - 1] == 1){
+      |                                                                                 ^
+sudoku.c:56:18: error: variable ‘submatriz’ set but not used [-Werror=unused-but-set-variable]
+   56 |              int submatriz = (i/3)*3 + (j/3);
+      |                  ^~~~~~~~~
+sudoku.c:49:8: error: unused variable ‘submatriz’ [-Werror=unused-variable]
+   49 |    int submatriz[9][9] = {0};
+      |        ^~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+b094c86

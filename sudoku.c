@@ -1,4 +1,4 @@
-#include <stdio.h>
+ #include <stdio.h>
 #include <stdlib.h>
 #include "list.h"
 
@@ -44,36 +44,23 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
-   int filas[9][10];
-   int columnas[9][10];
-   int submatriz[9][10];
-   int i,j;
+   int filas[9][9] = {0};
+   int columnas[9][9] = {0};
+   int submatriz[9][9] = {0};
 
-   for(i = 0; i < 9; i++)
-      {
-         for(j = 0; j < 0; j++){
-            filas[i][j] = 0;
-            columnas[i][j] = 0;
-            submatriz[i][j] = 0;
-         }         
-      }
-
-   for(i = 0;i < 9 ; i++)
-      for(j = 0 ; j < 9 ; j++){
-         int numero = n->sudo[i][j];
-         if(numero == 0) continue;
-
-         if(filas[i][numero] == 1) return 0;
-         filas[i][numero] = 1;
-
-         if(columnas[j][numero] == 1) return 0;
-         columnas[j][numero] = 1;
-
-         int fila_inicio = (i / 3) * 3 + (j / 3) * 3;
-         if(submatriz[fila_inicio][numero] == 1) return 0;
-         submatriz[fila_inicio][numero] = 1;
-      }
-    return 1;
+   int i , j;
+   for(i=0;i<9;i++){
+       for(j=0;j<9;j++){
+          int num = n->sudo[i][j];
+          if(num != 0){
+             int submatriz = (i/3)*3 + (j/3);
+             if(filas[i][num - 1] == 1 || columnas[j][num - 1] == 1 || submatriz[submatriz][num - 1] == 1){
+                return 0;
+             }
+          }
+       }
+   }
+   return 1;
 }
 
 

@@ -1,4 +1,4 @@
- #include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include "list.h"
 
@@ -78,7 +78,9 @@ List* get_adj_nodes(Node* n){
             for(k = 1; k <= 9 ; k++){
                Node * nuevo_nodo = copy(n);
                nuevo_nodo->sudo[i][j] = k;
-               pushBack(list, nuevo_nodo);
+               if(is_valid(nuevo_nodo)){
+                  pushBack(list, nuevo_nodo);
+               }
             }
          }
    return list;

@@ -57,6 +57,9 @@ int is_valid(Node* n){
              if(filas[i][num - 1] == 1 || columnas[j][num - 1] == 1 || submatriz[submatriz_valid][num - 1] == 1){
                 return 0;
              }
+             filas[i][num - 1] = 1;
+             columnas[j][num - 1] = 1;
+             submatriz[submatriz_valid][num - 1] = 1;
           }
        }
    }

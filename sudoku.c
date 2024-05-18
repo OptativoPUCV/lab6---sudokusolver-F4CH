@@ -53,8 +53,8 @@ int is_valid(Node* n){
        for(j=0;j<9;j++){
           int num = n->sudo[i][j];
           if(num != 0){
-             int submatriz = (i/3)*3 + (j/3);
-             if(filas[i][num - 1] == 1 || columnas[j][num - 1] == 1 || submatriz[submatriz][num - 1] == 1){
+             int submatriz_valid = (i/3)*3 + (j/3);
+             if(filas[i][num - 1] == 1 || columnas[j][num - 1] == 1 || submatriz[submatriz_valid][num - 1] == 1){
                 return 0;
              }
           }

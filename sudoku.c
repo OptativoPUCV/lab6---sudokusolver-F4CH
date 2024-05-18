@@ -82,6 +82,7 @@ List* get_adj_nodes(Node* n){
                   pushBack(list, nuevo_nodo);
                }
             }
+            return list;
          }
    return list;
 }
